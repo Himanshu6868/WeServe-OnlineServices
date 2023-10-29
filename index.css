@@ -298,7 +298,7 @@ header{
   .container2{
     flex-direction: column;
     width: 100%;
-    padding: 120px;
+    padding: 20px;
   }
   .services-section{
     height: auto;
