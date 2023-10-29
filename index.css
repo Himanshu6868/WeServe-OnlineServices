@@ -17,29 +17,45 @@ body{
   background-color: white;
 }
 
-/* .container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-} */
+
+.top-navbar{
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.top-navbar a{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+.top-navbar li{
+  list-style: none;
+}
+
+.top-navbar li a:hover{
+  color: #210022;
+}
 
 header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 15px 30px;
   background-color: #171717;
   font-family: 'Poppins', sans-serif;
 }
 
-.Title{
+.Title a{
   color: #ffffff;
-  font-size: 30px;
+  font-size: 35px;
   border: none;
   cursor:pointer;
   padding: 10px 16px;
-  border-radius: 30px;
-  transition: all 0.3s ease 0s;
+  text-decoration: none;
 }
 
 .nav-links a{
@@ -47,6 +63,7 @@ header{
   font-size: 20px;
   color: #edf0f1;
   text-decoration: none;
+  position: relative;
 }
 
 .nav-links{
@@ -59,21 +76,34 @@ header{
   border: 2px solid transparent;
   border-radius: 30px;
   color: white;
-  padding: 5px 13px;
-  margin-left: 20px;cursor: pointer;
+  padding: 0px 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
-.nav-links  a{
+/* .nav-links  a{
   transition: all 0.2s ease 0s;
+} */
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background-color: #a0a0a0;
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  transition: width 0.3s ease;
 }
 
-.nav-links a:hover{
-    color: #31f5ef;
+.nav-links a:hover::after {
+  width: 100%;
 }
+
 
 @media screen and (max-width: 768px) {
   header{
-    
     width: 100%;
   }
   .nav-links a{
@@ -83,6 +113,9 @@ header{
     display: none;
     padding: 0 1rem;
   }
+  .top-navbar{
+    display: none;
+  }
 }
 
 /* Landing Page Section */
@@ -90,7 +123,7 @@ header{
 .main-container{
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   align-items: center;
 }
@@ -109,7 +142,6 @@ header{
   width: 100%;
   padding-left: 18%;
   margin-top: 10rem;
-  /* padding: 15px; */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -139,28 +171,38 @@ header{
   background-color: rgb(25, 25, 25);
 }
 
-@media screen and (max-width: 768px) {
-  .main-container{
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+@media (max-width:1025px) {
+  .main p{
+    display: none;
   }
   .main{
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 2rem;
+    padding-left: 15%;
   }
-  .video-main, .main{
-    margin-bottom: 20px;
-    align-items: center;
+  .video-main{
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column; 
+    padding: 20px;
   }
 
-  .video-main{
-    margin-top: 10%;
-    margin-left: 50px;
+  .main {
+    max-width: none;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 2rem;
   }
-  .video{
-    width: 90%;
+
+  .video-main {
+    width: 100%; 
+    margin-left: 0;
+  }
+  .video-main video{
+    position: relative;
+    left: 25%;
   }
 }
 
@@ -224,7 +266,7 @@ header{
    }
 
  .card:hover{
-   box-shadow: 0px 0px 10px white;
+   box-shadow: 0px 0px 2px rgb(162, 162, 162);
  }
 
  .card p{
@@ -236,7 +278,6 @@ header{
  }
 
  .services{
-
    font-size: 20px;
    font-family: 'Roboto', sans-serif;
    margin-top: 20px;
@@ -257,6 +298,7 @@ header{
   .container2{
     flex-direction: column;
     width: 100%;
+    padding: 120px;
   }
   .services-section{
     height: auto;
