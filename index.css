@@ -15,29 +15,45 @@ body {
   background-color: white;
 }
 
-/* .container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-} */
+
+.top-navbar{
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.top-navbar a{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+.top-navbar li{
+  list-style: none;
+}
+
+.top-navbar li a:hover{
+  color: #210022;
+}
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 15px 30px;
   background-color: #171717;
   font-family: "Poppins", sans-serif;
 }
 
-.Title {
+.Title{
   color: #ffffff;
-  font-size: 30px;
+  font-size: 35px;
   border: none;
   cursor: pointer;
   padding: 10px 16px;
-  border-radius: 30px;
-  transition: all 0.3s ease 0s;
+  text-decoration: none;
 }
 
 .nav-links a {
@@ -45,6 +61,7 @@ header {
   font-size: 20px;
   color: #edf0f1;
   text-decoration: none;
+  position: relative;
 }
 
 .nav-links {
@@ -58,20 +75,33 @@ header {
   border-radius: 30px;
   color: white;
   padding: 5px 13px;
-  margin-left: 20px;
-  cursor: pointer;
+  margin-left: 20px;cursor: pointer;
 }
 
-.nav-links a {
+.nav-links  a{
   transition: all 0.2s ease 0s;
+} */
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background-color: #a0a0a0;
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #31f5ef;
+.nav-links a:hover{
+    color: #31f5ef;
 }
+
 
 @media screen and (max-width: 768px) {
-  header {
+  header{
+    
     width: 100%;
     padding: 5px;
   }
@@ -82,6 +112,9 @@ header {
     display: none;
     padding: 0 1rem;
   }
+  .top-navbar{
+    display: none;
+  }
 }
 
 /* Landing Page Section */
@@ -89,7 +122,7 @@ header {
 .main-container {
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   align-items: center;
 }
@@ -109,7 +142,7 @@ header {
   padding-left: 18%;
   margin-top: 10rem;
   /* padding: 15px; */
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main h2 {
@@ -139,29 +172,26 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  .main-container {
+  .main-container{
     flex-direction: column;
     margin: 0;
     padding: 0;
   }
-  .main {
+  .main{
     padding-left: 10%;
     padding-right: 10%;
     font-size: 2rem;
-    margin-top: 2rem;
-    text-align: center;
   }
-  .video-main,
-  .main {
+  .video-main, .main{
     margin-bottom: 20px;
     align-items: center;
   }
 
-  .video-main {
+  .video-main{
     margin-top: 10%;
     margin-left: 50px;
   }
-  .video {
+  .video{
     width: 90%;
   }
 }
@@ -230,52 +260,27 @@ header {
   padding-bottom: 20px;
 }
 
-/* .card:hover {
-  box-shadow: 0px 0px 10px white;
-} */
+ .card:hover{
+   box-shadow: 0px 0px 10px white;
+ }
 
-.card p {
-  font-size: 20px;
-  padding: 15px;
-  margin-top: 10px;
-  letter-spacing: 1.5px;
-  font-family: "Roboto", sans-serif;
-}
+ .card p{
+   font-size: 20px;
+   padding: 15px;
+   margin-top: 10px;
+   letter-spacing: 1.5px;
+   font-family:  "Roboto", sans-serif;
+ }
 
-.card h3 {
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  margin-top: 20px;
-  margin-left: 70px;
-  margin-right: 70px;
-}
+ .services{
 
-@media (max-width: 1200px) {
-  .card {
-    /* Add media query styles here */
-  }
-}
-
-/* .card:hover {
-  box-shadow: 0px 0px 10px white;
-} */
-
-.card p {
-  font-size: 20px;
-  padding: 15px;
-  margin-top: 10px;
-  letter-spacing: 1.5px;
-  font-family: "Roboto", sans-serif;
-}
-
-.services {
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  margin-top: 20px;
-  padding: 5px;
-  margin-left: 70px;
-  margin-right: 70px;
-}
+   font-size: 20px;
+   font-family: 'Roboto', sans-serif;
+   margin-top: 20px;
+   padding: 5px;
+   margin-left: 70px;
+   margin-right: 70px;
+ }
 
 @media (max-width: 1200px) {
   .card {
@@ -289,6 +294,7 @@ header {
   .container2 {
     flex-direction: column;
     width: 100%;
+    padding: 20px;
   }
   .services-section {
     height: auto;
